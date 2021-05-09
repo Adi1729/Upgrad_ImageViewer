@@ -1,0 +1,26 @@
+.login-button {
+    float: right;
+} 
+
+.red{
+    color: red;
+}
+
+.dispNone{
+    display : none; 
+}
+
+.dispBlock{
+    display: block;
+}
+
+.tabs {
+    margin-bottom: 20px;
+
+}
+
+.app-header {
+    background-color: #263238;
+    height: 36px;
+
+}
