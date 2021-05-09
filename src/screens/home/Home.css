@@ -1,0 +1,24 @@
+.released-image-grid-item {
+    margin: 15px;
+}
+
+.image-poster {
+    height: 100%;
+    width: auto;
+}
+
+.flex-container {
+    justify-content: space-between;
+  }
+
+.red {
+    color: red;
+}
+
+.likeitem {
+    display: inline-block;
+}
+
+.comments {
+    display: inline-block;
+}

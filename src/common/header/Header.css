@@ -1,0 +1,44 @@
+.app-header {
+    display: flex;
+    flex-direction: row;
+    background-color: #263238;
+    height: 50px;
+    color: #fff;   
+   
+}
+
+.title{
+    margin : 12px;
+}
+
+.searchBox {
+    height: 30px;
+    border-radius: 4px;
+    width: 300px;
+    float: left;
+    background-color: #c0c0c0;
+    margin: 10px;
+    margin-left: 1350px;
+}
+
+.app-pic {
+    width: 40px;
+    margin-right: 20px;
+    height: 40px;
+    margin-right: 0px;
+    margin-left: 10px;
+    
+ }
+
+.app-logo{
+    height: 30px;
+}
+
+.searchText{
+    padding-bottom: 0px;
+}
+
+.formControl {
+    width: 150px;
+     height: 30px;
+}

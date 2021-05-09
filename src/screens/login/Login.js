@@ -12,6 +12,11 @@ import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
 import FormHelperText from '@material-ui/core/FormHelperText' ;
 import 'typeface-roboto';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Card from '@material-ui/core/Card';
+import Header from '../../common/header/Header';
+import Home from '../home/Home';
 
 const customStyles ={
     content :{
@@ -25,13 +30,6 @@ const customStyles ={
     }
 }
 
-const TabContainer = function(props){
-    return(
-        <Typography component ="div" style ={{padding:0 , textAlign : 'center'}}>
-            {props.children}
-        </Typography>
-    )
-}
 
 class Login extends Component {
     constructor()
@@ -43,7 +41,8 @@ class Login extends Component {
         username : "",
         password : "",
         usernameRequired :"dispNone",
-        passwordRequired :"dispNone"
+        passwordRequired :"dispNone",
+        error : "dispNone"
     }
 
     }
@@ -63,6 +62,25 @@ class Login extends Component {
     loginClickHandler = () => {
         this.state.username ==="" ? this.setState({usernameRequired : "dispBlock"}) : this.setState({usernameRequired : "dispNone"});
         this.state.password ==="" ? this.setState({passwordRequired : "dispBlock"}) : this.setState({passwordRequired : "dispNone"});  
+        let usernameCorrect = "Username";
+        let passwordCorrect = "Password";
+        let accessToken = "IGQVJXa2xuT29yVXMxN0gtMWdnakY4TVVvUnNGcHhObllBaXJwZA1hGTEFPazJCNk9aSmh4bWpkQXFrUkNYMFNlMVpaeWktY3Jwb1RvMXAzbThCMm5uVjNIRi1jai0zWDZAKYmhGWWtCRTJ0NF9sQkI2YnFOemxBNnp2ZAldF";
+        console.log(this.state.username,this.state.password);
+
+        if((this.state.username==usernameCorrect) && (this.state.password == passwordCorrect)) {
+            sessionStorage.setItem('accessToken','IGQVJXa2xuT29yVXMxN0gtMWdnakY4TVVvUnNGcHhObllBaXJwZA1hGTEFPazJCNk9aSmh4bWpkQXFrUkNYMFNlMVpaeWktY3Jwb1RvMXAzbThCMm5uVjNIRi1jai0zWDZAKYmhGWWtCRTJ0NF9sQkI2YnFOemxBNnp2ZAldF')
+            ReactDOM.render(
+                <Home />,
+               document.getElementById('root')
+            )
+
+
+        }
+
+        else if ((this.state.username!="") && (this.state.password!="")) {
+            this.state.error = "dispBlock"
+        }
+
     }
 
     inputUserNameChangeHandler = (e) =>{
@@ -80,25 +98,12 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <header className = "app-header"> 
-                    <div className = "login-button">
-                        <Button variant = "contained" color = "default" onClick={this.openModalHandler}>Login</Button>
-                    </div>
-                </header>
-
-                <Modal 
-                isOpen={this.state.modalIsOpen} 
-                contentLabel = "Login" 
-                onRequestClose={this.closeModalHandler} 
-                style = {customStyles}
-                >
-
-                <Tabs className ="tabs" value ={this.state.value} onChange = {this.tabChangeHandler}>
-                        <Tab label = "LOGIN" />
-                    </Tabs>
-
-                    {this.state.value ===0 && 
-                    <TabContainer>
+               <Header />
+                <Card className  = 'login-card' variant="outlined">
+                    <CardContent>
+                    <Typography  variant = "h5">
+                           LOGIN
+                     </Typography>
                         <FormControl required>
                             <InputLabel htmlFor="userName" > Username</InputLabel>
                             <Input id ="username" type ="text" username = {this.state.username}  onChange = {this.inputUserNameChangeHandler}/>
@@ -110,11 +115,11 @@ class Login extends Component {
                             <FormHelperText className = {this.state.passwordRequired}><span className ="red">required</span></FormHelperText>
                         </FormControl> <br /> <br />
                         <Button variant ="contained" color ="primary" onClick = {this.loginClickHandler}> LOGIN
-                            </Button>
-                    </TabContainer>}
+                            </Button>           
+                        <FormHelperText className = {this.state.error}><span className ="red">Incorrect username and/or password</span></FormHelperText>
+                    </CardContent>
+                </Card>
 
-                </Modal>
-                Login File
             </div>
         )
     }
