@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom'; 
 import './Login.css';
 import Button from '@material-ui/core/Button';
-import Modal from 'react-modal';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -16,7 +13,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Card from '@material-ui/core/Card';
 import Header from '../../common/header/Header';
-import Home from '../home/Home';
 
 const customStyles ={
     content :{
@@ -64,16 +60,11 @@ class Login extends Component {
         this.state.password ==="" ? this.setState({passwordRequired : "dispBlock"}) : this.setState({passwordRequired : "dispNone"});  
         let usernameCorrect = "Username";
         let passwordCorrect = "Password";
-        let accessToken = "IGQVJXa2xuT29yVXMxN0gtMWdnakY4TVVvUnNGcHhObllBaXJwZA1hGTEFPazJCNk9aSmh4bWpkQXFrUkNYMFNlMVpaeWktY3Jwb1RvMXAzbThCMm5uVjNIRi1jai0zWDZAKYmhGWWtCRTJ0NF9sQkI2YnFOemxBNnp2ZAldF";
-        console.log(this.state.username,this.state.password);
-
+        let accessToken = "IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR";
+        
         if((this.state.username==usernameCorrect) && (this.state.password == passwordCorrect)) {
-            sessionStorage.setItem('accessToken','IGQVJXa2xuT29yVXMxN0gtMWdnakY4TVVvUnNGcHhObllBaXJwZA1hGTEFPazJCNk9aSmh4bWpkQXFrUkNYMFNlMVpaeWktY3Jwb1RvMXAzbThCMm5uVjNIRi1jai0zWDZAKYmhGWWtCRTJ0NF9sQkI2YnFOemxBNnp2ZAldF')
-            ReactDOM.render(
-                <Home />,
-               document.getElementById('root')
-            )
-
+            sessionStorage.setItem('accessToken','IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR')
+            this.props.history.push('/home');
 
         }
 

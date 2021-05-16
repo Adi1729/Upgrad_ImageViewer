@@ -29,7 +29,7 @@ import { red } from '@material-ui/core/colors';
 import GridList from '@material-ui/core/GridList';
 
 const base_url = "https://graph.instagram.com/me/media?fields=id,caption&access_token=";
-const access_token = "IGQVJVcU9RQ25wN3p6VnUycHZAfX3BpUmNUd3R1bk12UEhUNU1hRXJ2aG54cFNiYnE4MS1IZA2ZANQUt0OW5xSlFtTlRXeDhwRUtCQUU0Ml9kNDhqWEgwSVlOR0g5WkphS21oZAWN4ZAnhka1dPZAGFUUlBUakpKM3RKckZAVeXpj";
+const access_token = "IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -169,6 +169,7 @@ class Home extends Component {
                                 <div className="comments">
                                     <Input placeholder="Add a comment" type="text" />
                                     <Button variant="contained" color="primary">ADD</Button>
+                                    
                                 </div>
                             </CardContent>
                         </Card>

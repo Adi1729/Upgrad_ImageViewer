@@ -1,0 +1,28 @@
+.col-left {
+    width:10%;
+    height:50%;
+}
+.col-l {
+    width:30%;
+}
+.col-c {
+    width:30%;
+}
+.col-r {
+    width:40%;
+}
+.row-one {
+    padding-top: 10px;
+    padding-bottom: 10px ;
+    align-items: flex-start;
+    display:flex;
+    font-size: 22px;
+    font-style: bold;
+}
+
+.row-two {
+    padding-bottom: 10px ;
+    display:flex;
+    align-items:center;
+    font-size: 18px;
+}

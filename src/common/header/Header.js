@@ -7,11 +7,40 @@ import Input from '@material-ui/core/Input';
 import logo from '../../assets/logo.svg';
 import Avatar from '@material-ui/core/Avatar';
 import profile_picture from '../../assets/profile_picture.jpg'
+import {IconButton, Menu, MenuItem} from '@material-ui/core'
+import Button from '@material-ui/core/Button';
+import {Link,Route, BrowserRouter as Router} from 'react-router-dom';
+import Home from '../../screens/home/Home'
+import Login from '../../screens/login/Login'
+
 
 class Header extends Component {
     constructor(){
         super();
+        this.state = {
+            openMenu : null,
+            setOpenMenu : null
+
+        }
     }
+
+     menuHandler = () => {
+
+        this.setState({
+            setOpenMenu : true,
+            openMenu : true
+         });
+    }
+
+
+    closeMenu = () => {
+
+        this.setState({
+            setOpenMenu : false,
+            openMenu : false
+         });
+    }
+
 
 
     render(){
@@ -27,10 +56,28 @@ class Header extends Component {
                           <Input className="searchText" type="text" placeholder="Search..." disableUnderline={true}
                             onChange={this.props.searchChangeHandler} />
                         </FormControl>
-                      </div>
+                    </div>
+                   
+                        <IconButton >
+                            <Avatar className='app-pic' src={profile_picture} onClick={this.menuHandler} >
+                            </Avatar>
+                        </IconButton>
+                        <Menu id="menu-appbar"
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
 
-                      <Avatar className = 'app-pic' src={profile_picture} />
-
+                            open={this.state.openMenu} onClose={this.closeMenu}  >
+                            <MenuItem onClick={this.closeMenu}><Link to="/profile">Profile</Link></MenuItem>
+                            <MenuItem onClick={this.closeMenu}><Link to="/">Logout</Link></MenuItem>
+                        </Menu>
+                
+                   
                 </header>
 
             </div>

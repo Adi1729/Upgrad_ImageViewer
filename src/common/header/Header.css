@@ -22,16 +22,24 @@
 }
 
 .app-pic {
-    width: 40px;
-    margin-right: 20px;
-    height: 40px;
-    margin-right: 0px;
-    margin-left: 10px;
+    margin-left: auto;
     
  }
 
-.app-logo{
-    height: 30px;
+ .avatar {
+    margin-left: auto;
+}
+
+ .menu-appbar {
+    margin-left: auto;
+    
+ }
+
+
+.app-logo {
+    color: #fff;
+    font-size: 18px;
+
 }
 
 .searchText{
