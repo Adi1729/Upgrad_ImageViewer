@@ -8,24 +8,6 @@ import profile_picture from '../../assets/profile_picture.jpg'
 const base_url = "https://graph.instagram.com/me/media?fields=id,caption&access_token=";
 const access_token = "IGQVJXV2Q5ZAjBDTVFSeUUwNTlSVzktcmItN0IyRlJ4QTNtcWJFTGxQOUlWQm1UZADdob0luaHFvdVJ4a0RqNjNyc19tbzY0OFV5NVZAlaV9vZA2NqS2ZA1U2ZAZAT2hQSkZAVd1pxOG5FcWNCN2xZAa3N5VVZA2eHlTeUY3V05CQnJR";
 
-const styles = theme => ({
-
-    root: {
-        flexGrow: 1,
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'space-around',
-        overflow: 'hidden',
-        backgroundColor: theme.palette.background.paper
-
-    },
-    gridList: {
-        width: 1100,
-        height: 800,
-    },
-
-});
-
 
 class Profile extends Component {
 
