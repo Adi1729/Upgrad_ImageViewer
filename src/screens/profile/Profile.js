@@ -6,7 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import profile_picture from '../../assets/profile_picture.jpg'
 
 const base_url = "https://graph.instagram.com/me/media?fields=id,caption&access_token=";
-const access_token = "IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR";
+const access_token = "IGQVJXV2Q5ZAjBDTVFSeUUwNTlSVzktcmItN0IyRlJ4QTNtcWJFTGxQOUlWQm1UZADdob0luaHFvdVJ4a0RqNjNyc19tbzY0OFV5NVZAlaV9vZA2NqS2ZA1U2ZAZAT2hQSkZAVd1pxOG5FcWNCN2xZAa3N5VVZA2eHlTeUY3V05CQnJR";
 
 const styles = theme => ({
 

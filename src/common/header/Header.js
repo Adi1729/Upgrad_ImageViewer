@@ -49,12 +49,12 @@ class Header extends Component {
                 <header className = "app-header">
                 <div className = "title">Image Viewer
                   </div>
-                 
+
                     <div className="searchBox" >
                         <img src={logo} className="app-logo" alt="Search Logo" />
                         <FormControl className="formControl">
                           <Input className="searchText" type="text" placeholder="Search..." disableUnderline={true}
-                            onChange={this.props.searchChangeHandler} />
+                                 />
                         </FormControl>
                     </div>
                    
@@ -76,8 +76,6 @@ class Header extends Component {
                             <MenuItem onClick={this.closeMenu}><Link to="/profile">Profile</Link></MenuItem>
                             <MenuItem onClick={this.closeMenu}><Link to="/">Logout</Link></MenuItem>
                         </Menu>
-                
-                   
                 </header>
 
             </div>

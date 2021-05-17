@@ -32,13 +32,14 @@ class Login extends Component {
     {
         super();
         this.state = {
-        modalIsOpen : false,
-        value : 0,
-        username : "",
-        password : "",
-        usernameRequired :"dispNone",
-        passwordRequired :"dispNone",
-        error : "dispNone"
+                    modalIsOpen : false,
+                    value : 0,
+                    username : "",
+                    password : "",
+                    usernameRequired :"dispNone",
+                    passwordRequired :"dispNone",
+                    error : "dispNone",
+                    loginSuccess : false
     }
 
     }
@@ -60,12 +61,14 @@ class Login extends Component {
         this.state.password ==="" ? this.setState({passwordRequired : "dispBlock"}) : this.setState({passwordRequired : "dispNone"});  
         let usernameCorrect = "Username";
         let passwordCorrect = "Password";
-        let accessToken = "IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR";
+        let accessToken = "IGQVJXV2Q5ZAjBDTVFSeUUwNTlSVzktcmItN0IyRlJ4QTNtcWJFTGxQOUlWQm1UZADdob0luaHFvdVJ4a0RqNjNyc19tbzY0OFV5NVZAlaV9vZA2NqS2ZA1U2ZAZAT2hQSkZAVd1pxOG5FcWNCN2xZAa3N5VVZA2eHlTeUY3V05CQnJR";
         
         if((this.state.username==usernameCorrect) && (this.state.password == passwordCorrect)) {
-            sessionStorage.setItem('accessToken','IGQVJWZAC1KcmJDb3ZAuUHhZAOU1PNWVJakZA3RnhDQTVpazZAHVkFoQm9MV2FKQ3pDX3lTcE5UeXZAuYzgtc2NuTjdmYWptNjRPcTJKRmVWLVpBZAm51S3BwWUpxNGdaaTJkYncxUC16UEFWRlNKV3RaODdsaDB0WGNxWGVkZAnpR')
+            sessionStorage.setItem('accessToken','IGQVJXV2Q5ZAjBDTVFSeUUwNTlSVzktcmItN0IyRlJ4QTNtcWJFTGxQOUlWQm1UZADdob0luaHFvdVJ4a0RqNjNyc19tbzY0OFV5NVZAlaV9vZA2NqS2ZA1U2ZAZAT2hQSkZAVd1pxOG5FcWNCN2xZAa3N5VVZA2eHlTeUY3V05CQnJR')
+            this.state.loginSuccess = true ;
+            console.log(this.state.loginSuccess)
             this.props.history.push('/home');
-
+           
         }
 
         else if ((this.state.username!="") && (this.state.password!="")) {
